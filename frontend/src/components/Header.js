@@ -11,20 +11,30 @@ export class Header extends Component {
     static contextType = DataContext;
 
     state = {
-        toggle: false
+        toggle: false,
+        //searchTerm : " "
     }
 
     menuToggle = () =>{
         this.setState({toggle: !this.state.toggle})
-    }
+    };
+
+    // materialLookUp = (e) => {
+    //     this.setState({searchTerm: e.target.searchTerm})
+    // };
 
     render() {
         const {toggle} = this.state;
         const {cart} = this.context;
+        //const {searchTerm} = this.state;
 
         if(cart.length === 5){
             alert("5 Robots Selected");
         }
+
+        // if(searchTerm !== ""){
+        //     return null;
+        // }
 
         return (
             <header>
@@ -34,6 +44,13 @@ export class Header extends Component {
                 <div className="logo">
                     <h1><Link to="/">ROBOT MARKET</Link></h1>
                 </div>
+                
+                {/* SEARCH BAR                 
+                <div className="search">
+                    <input type="text" placeholder="Search Material" onChange={this.materialLookUp}/>
+                </div>
+                 */}
+                
                 <nav>
                     <ul className={toggle ? "toggle" : ""}>
                         <li><Link to="/robot">Robots</Link></li>

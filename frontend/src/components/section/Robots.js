@@ -11,8 +11,7 @@ export class Robots extends Component {
        const {robots} = this.context;
 
        return (
-
-
+           
             <div id="robot">
                 {
                     robots.map(robot =>(
@@ -22,7 +21,7 @@ export class Robots extends Component {
                             </Link>
                             <div className="content">
                                 <h3>{robot.name}</h3>
-                                <span> ฿{robot.price}</span>
+                                <span> ฿{robot.price.split(".").join(".")}</span>
                                 <p>{robot.stock}</p>
                                 <p>{robot.createdAt.slice(0,-14).split('-').reverse().join('-')}</p>
                                 <p>{robot.material}</p>

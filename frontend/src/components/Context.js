@@ -812,6 +812,8 @@ export class DataProvider extends Component {
         total: 0
     };
 
+   
+    
     addCart = (name) => {
 
             const {robots, cart} = this.state;
@@ -879,7 +881,7 @@ export class DataProvider extends Component {
         const {addCart, increase, decrease, removeRobot, getTotal } = this;
 
         return (
-            <DataContext.Provider value={{robots, addCart, cart, increase, decrease, removeRobot, total, getTotal }}>
+            <DataContext.Provider value={{robots, addCart ,cart, increase, decrease, removeRobot, total, getTotal }}>
                 {this.props.children}
             </DataContext.Provider>
         )

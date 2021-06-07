@@ -29,7 +29,7 @@ export class Cart extends Component {
                                     <div className="row">
                                         <h2>{robot.name}</h2>
                                     </div>
-                                    <span>฿{robot.price} * {robot.stock}</span>
+                                    <span>฿{robot.price}</span>
                                     <p>{robot.material}</p>
                                     
                                     <div className="amount">
@@ -45,7 +45,7 @@ export class Cart extends Component {
     
                     <div className="total">
                         <Link to="/payment">Payment</Link>
-                        <h3>Total: ฿{total}</h3>
+                        <h3>Total: ฿{total.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</h3>
                     </div>
                 </>
             )
