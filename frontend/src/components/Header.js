@@ -3,9 +3,12 @@ import Menu from './svg/bars-solid.svg'
 import Close from './svg/times-solid.svg'
 import Cart from './svg/shopping-cart-solid.svg'
 import { Link } from 'react-router-dom'
+import { DataContext } from './Context'
 import './css/Header.css'
 
 export class Header extends Component {
+
+    static contextType = DataContext;
 
     state = {
         toggle: false
@@ -17,6 +20,12 @@ export class Header extends Component {
 
     render() {
         const {toggle} = this.state;
+        const {cart} = this.context;
+
+        if(cart.length === 5){
+            alert("5 Robots Selected");
+        }
+
         return (
             <header>
                 <div className="menu" onClick={this.menuToggle}>
@@ -27,8 +36,7 @@ export class Header extends Component {
                 </div>
                 <nav>
                     <ul className={toggle ? "toggle" : ""}>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/robots">Robots</Link></li>
+                        <li><Link to="/robot">Robots</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         
@@ -37,7 +45,7 @@ export class Header extends Component {
                         </li>
                     </ul>
                     <div className="navcart">
-                        <span>0</span>
+                        <span>{cart.length}</span>
                         <Link to="/cart">
                             <img src={Cart} alt="" width="20"/>
                         </Link>

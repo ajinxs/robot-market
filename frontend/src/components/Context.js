@@ -1,0 +1,888 @@
+import React, { Component } from 'react'
+//import robotData from '../Data.json';
+
+export const DataContext = React.createContext();
+
+export class DataProvider extends Component {
+
+    state = {
+        robots: [
+            {
+            "name": "Layne Ziemann",
+            "image": "https://robohash.org/Layne Ziemann.png?size=120x120",
+            "price": "859.32",
+            "stock": 3,
+            "createdAt": "2021-03-28T02:57:43.808Z",
+            "material": "Cotton"
+            },
+            {
+            "name": "Tracey Parisian",
+            "image": "https://robohash.org/Tracey Parisian.png?size=120x120",
+            "price": "796.55",
+            "stock": 0,
+            "createdAt": "2020-09-20T11:23:15.931Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Westley Wunsch",
+            "image": "https://robohash.org/Westley Wunsch.png?size=120x120",
+            "price": "847.94",
+            "stock": 2,
+            "createdAt": "2021-05-04T15:30:50.692Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Forrest Williamson",
+            "image": "https://robohash.org/Forrest Williamson.png?size=120x120",
+            "price": "557.80",
+            "stock": 0,
+            "createdAt": "2021-02-18T02:59:29.264Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Ladarius Fisher",
+            "image": "https://robohash.org/Ladarius Fisher.png?size=120x120",
+            "price": "45.55",
+            "stock": 5,
+            "createdAt": "2020-10-28T09:40:00.420Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Marlen Koelpin",
+            "image": "https://robohash.org/Marlen Koelpin.png?size=120x120",
+            "price": "388.19",
+            "stock": 0,
+            "createdAt": "2021-05-15T10:28:43.415Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Enid Blick",
+            "image": "https://robohash.org/Enid Blick.png?size=120x120",
+            "price": "854.75",
+            "stock": 8,
+            "createdAt": "2020-08-19T06:36:55.605Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Paula Mante",
+            "image": "https://robohash.org/Paula Mante.png?size=120x120",
+            "price": "826.47",
+            "stock": 7,
+            "createdAt": "2021-03-06T17:07:27.527Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Margret Leuschke",
+            "image": "https://robohash.org/Margret Leuschke.png?size=120x120",
+            "price": "220.99",
+            "stock": 5,
+            "createdAt": "2020-09-29T14:28:04.811Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Ottis Carroll",
+            "image": "https://robohash.org/Ottis Carroll.png?size=120x120",
+            "price": "787.28",
+            "stock": 4,
+            "createdAt": "2021-02-15T08:05:14.259Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Rhett Gislason",
+            "image": "https://robohash.org/Rhett Gislason.png?size=120x120",
+            "price": "537.41",
+            "stock": 8,
+            "createdAt": "2020-10-01T02:57:14.840Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Jefferey Marks",
+            "image": "https://robohash.org/Jefferey Marks.png?size=120x120",
+            "price": "829.29",
+            "stock": 10,
+            "createdAt": "2020-07-24T21:34:19.776Z",
+            "material": "Fresh"
+            },
+            {
+            "name": "Nestor Anderson",
+            "image": "https://robohash.org/Nestor Anderson.png?size=120x120",
+            "price": "307.07",
+            "stock": 5,
+            "createdAt": "2020-11-09T16:14:09.569Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Sasha Adams",
+            "image": "https://robohash.org/Sasha Adams.png?size=120x120",
+            "price": "60.81",
+            "stock": 8,
+            "createdAt": "2020-11-02T06:22:33.512Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Gardner Gulgowski",
+            "image": "https://robohash.org/Gardner Gulgowski.png?size=120x120",
+            "price": "767.95",
+            "stock": 8,
+            "createdAt": "2020-11-16T22:56:46.134Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Emerson Metz",
+            "image": "https://robohash.org/Emerson Metz.png?size=120x120",
+            "price": "840.31",
+            "stock": 1,
+            "createdAt": "2020-09-15T20:20:56.955Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Clemens Bednar",
+            "image": "https://robohash.org/Clemens Bednar.png?size=120x120",
+            "price": "788.80",
+            "stock": 8,
+            "createdAt": "2020-08-28T14:38:55.073Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Trevor McKenzie",
+            "image": "https://robohash.org/Trevor McKenzie.png?size=120x120",
+            "price": "312.35",
+            "stock": 4,
+            "createdAt": "2020-06-24T19:30:57.988Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Dominic Mayer",
+            "image": "https://robohash.org/Dominic Mayer.png?size=120x120",
+            "price": "438.66",
+            "stock": 10,
+            "createdAt": "2020-06-23T17:48:24.611Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Fannie Batz",
+            "image": "https://robohash.org/Fannie Batz.png?size=120x120",
+            "price": "767.83",
+            "stock": 2,
+            "createdAt": "2020-12-22T21:06:54.949Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Joy Zulauf",
+            "image": "https://robohash.org/Joy Zulauf.png?size=120x120",
+            "price": "806.91",
+            "stock": 7,
+            "createdAt": "2020-08-12T05:54:28.977Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Karson Fisher",
+            "image": "https://robohash.org/Karson Fisher.png?size=120x120",
+            "price": "373.57",
+            "stock": 1,
+            "createdAt": "2020-07-20T10:53:25.876Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Matt Pagac",
+            "image": "https://robohash.org/Matt Pagac.png?size=120x120",
+            "price": "862.94",
+            "stock": 8,
+            "createdAt": "2020-12-03T05:54:47.527Z",
+            "material": "Fresh"
+            },
+            {
+            "name": "Ignatius Dach",
+            "image": "https://robohash.org/Ignatius Dach.png?size=120x120",
+            "price": "570.79",
+            "stock": 4,
+            "createdAt": "2020-10-16T11:28:02.236Z",
+            "material": "Cotton"
+            },
+            {
+            "name": "Evelyn Christiansen",
+            "image": "https://robohash.org/Evelyn Christiansen.png?size=120x120",
+            "price": "576.37",
+            "stock": 0,
+            "createdAt": "2020-06-16T07:43:34.752Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Lula Emard",
+            "image": "https://robohash.org/Lula Emard.png?size=120x120",
+            "price": "547.37",
+            "stock": 4,
+            "createdAt": "2021-04-30T04:27:27.644Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Leonard Windler",
+            "image": "https://robohash.org/Leonard Windler.png?size=120x120",
+            "price": "229.00",
+            "stock": 7,
+            "createdAt": "2020-09-03T09:17:06.494Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Emily Harris",
+            "image": "https://robohash.org/Emily Harris.png?size=120x120",
+            "price": "693.58",
+            "stock": 9,
+            "createdAt": "2021-05-18T15:36:57.608Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Aidan Spinka",
+            "image": "https://robohash.org/Aidan Spinka.png?size=120x120",
+            "price": "364.46",
+            "stock": 7,
+            "createdAt": "2021-06-01T08:58:23.287Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Victoria Torp",
+            "image": "https://robohash.org/Victoria Torp.png?size=120x120",
+            "price": "508.50",
+            "stock": 2,
+            "createdAt": "2020-11-17T21:21:04.652Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Mariah Anderson",
+            "image": "https://robohash.org/Mariah Anderson.png?size=120x120",
+            "price": "801.19",
+            "stock": 5,
+            "createdAt": "2021-04-04T03:19:45.288Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Lysanne Paucek",
+            "image": "https://robohash.org/Lysanne Paucek.png?size=120x120",
+            "price": "588.33",
+            "stock": 7,
+            "createdAt": "2021-03-04T23:28:21.089Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Nikolas Doyle",
+            "image": "https://robohash.org/Nikolas Doyle.png?size=120x120",
+            "price": "576.42",
+            "stock": 2,
+            "createdAt": "2021-03-31T10:34:40.555Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Zena Fahey",
+            "image": "https://robohash.org/Zena Fahey.png?size=120x120",
+            "price": "480.91",
+            "stock": 3,
+            "createdAt": "2021-02-11T18:29:03.078Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Margarette Fadel",
+            "image": "https://robohash.org/Margarette Fadel.png?size=120x120",
+            "price": "349.55",
+            "stock": 0,
+            "createdAt": "2020-10-18T20:51:34.488Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Olga Harvey",
+            "image": "https://robohash.org/Olga Harvey.png?size=120x120",
+            "price": "337.56",
+            "stock": 7,
+            "createdAt": "2020-11-25T17:20:42.748Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Crawford Leffler",
+            "image": "https://robohash.org/Crawford Leffler.png?size=120x120",
+            "price": "273.13",
+            "stock": 3,
+            "createdAt": "2021-04-04T16:21:04.249Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Dell Fisher",
+            "image": "https://robohash.org/Dell Fisher.png?size=120x120",
+            "price": "187.62",
+            "stock": 3,
+            "createdAt": "2021-01-27T11:49:54.487Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Blair Ryan",
+            "image": "https://robohash.org/Blair Ryan.png?size=120x120",
+            "price": "456.21",
+            "stock": 8,
+            "createdAt": "2021-05-25T01:39:54.327Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Saige Ziemann",
+            "image": "https://robohash.org/Saige Ziemann.png?size=120x120",
+            "price": "364.77",
+            "stock": 5,
+            "createdAt": "2020-11-13T05:01:16.434Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Ibrahim Kunde",
+            "image": "https://robohash.org/Ibrahim Kunde.png?size=120x120",
+            "price": "565.75",
+            "stock": 2,
+            "createdAt": "2020-10-24T03:42:39.694Z",
+            "material": "Fresh"
+            },
+            {
+            "name": "Percival Hayes",
+            "image": "https://robohash.org/Percival Hayes.png?size=120x120",
+            "price": "983.19",
+            "stock": 0,
+            "createdAt": "2021-01-13T15:58:17.595Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Raquel Johns",
+            "image": "https://robohash.org/Raquel Johns.png?size=120x120",
+            "price": "184.88",
+            "stock": 5,
+            "createdAt": "2020-08-21T18:08:20.356Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Nathanial Cormier",
+            "image": "https://robohash.org/Nathanial Cormier.png?size=120x120",
+            "price": "624.72",
+            "stock": 3,
+            "createdAt": "2020-08-06T15:19:28.970Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Marshall Conroy",
+            "image": "https://robohash.org/Marshall Conroy.png?size=120x120",
+            "price": "267.44",
+            "stock": 3,
+            "createdAt": "2020-12-03T11:35:36.755Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Emory Hyatt",
+            "image": "https://robohash.org/Emory Hyatt.png?size=120x120",
+            "price": "353.85",
+            "stock": 6,
+            "createdAt": "2020-09-04T06:49:57.227Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Zachariah Morar",
+            "image": "https://robohash.org/Zachariah Morar.png?size=120x120",
+            "price": "506.49",
+            "stock": 4,
+            "createdAt": "2021-04-11T22:46:02.063Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Dereck Cruickshank",
+            "image": "https://robohash.org/Dereck Cruickshank.png?size=120x120",
+            "price": "971.85",
+            "stock": 6,
+            "createdAt": "2020-07-04T11:08:26.168Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Kianna Haag",
+            "image": "https://robohash.org/Kianna Haag.png?size=120x120",
+            "price": "8.03",
+            "stock": 3,
+            "createdAt": "2020-11-29T21:41:12.782Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Meggie Larkin",
+            "image": "https://robohash.org/Meggie Larkin.png?size=120x120",
+            "price": "32.77",
+            "stock": 10,
+            "createdAt": "2021-03-05T01:16:45.300Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Magnolia Skiles",
+            "image": "https://robohash.org/Magnolia Skiles.png?size=120x120",
+            "price": "647.00",
+            "stock": 9,
+            "createdAt": "2021-02-26T23:46:16.870Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Marquise Heidenreich",
+            "image": "https://robohash.org/Marquise Heidenreich.png?size=120x120",
+            "price": "139.75",
+            "stock": 8,
+            "createdAt": "2020-06-07T02:32:06.792Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Doyle Rohan",
+            "image": "https://robohash.org/Doyle Rohan.png?size=120x120",
+            "price": "498.03",
+            "stock": 2,
+            "createdAt": "2020-12-04T10:06:13.949Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Brooke Tromp",
+            "image": "https://robohash.org/Brooke Tromp.png?size=120x120",
+            "price": "29.88",
+            "stock": 10,
+            "createdAt": "2020-10-29T11:18:51.943Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Muriel King",
+            "image": "https://robohash.org/Muriel King.png?size=120x120",
+            "price": "727.02",
+            "stock": 6,
+            "createdAt": "2021-04-02T11:50:29.277Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Emil Morar",
+            "image": "https://robohash.org/Emil Morar.png?size=120x120",
+            "price": "364.20",
+            "stock": 10,
+            "createdAt": "2021-02-28T11:45:52.932Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Libby Bayer",
+            "image": "https://robohash.org/Libby Bayer.png?size=120x120",
+            "price": "838.10",
+            "stock": 6,
+            "createdAt": "2021-02-09T11:23:31.480Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Joanne Wolf",
+            "image": "https://robohash.org/Joanne Wolf.png?size=120x120",
+            "price": "964.38",
+            "stock": 3,
+            "createdAt": "2020-12-31T17:31:03.794Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Cielo Kunde",
+            "image": "https://robohash.org/Cielo Kunde.png?size=120x120",
+            "price": "48.95",
+            "stock": 8,
+            "createdAt": "2021-01-03T06:07:45.764Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Wendy Heaney",
+            "image": "https://robohash.org/Wendy Heaney.png?size=120x120",
+            "price": "264.76",
+            "stock": 2,
+            "createdAt": "2020-08-10T16:44:17.213Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Lilyan Toy",
+            "image": "https://robohash.org/Lilyan Toy.png?size=120x120",
+            "price": "492.74",
+            "stock": 7,
+            "createdAt": "2020-12-15T08:30:08.562Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Guido Schuster",
+            "image": "https://robohash.org/Guido Schuster.png?size=120x120",
+            "price": "456.55",
+            "stock": 3,
+            "createdAt": "2020-08-02T08:48:27.383Z",
+            "material": "Fresh"
+            },
+            {
+            "name": "Oran Mante",
+            "image": "https://robohash.org/Oran Mante.png?size=120x120",
+            "price": "207.69",
+            "stock": 2,
+            "createdAt": "2020-12-27T21:32:37.051Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Karlee Nienow",
+            "image": "https://robohash.org/Karlee Nienow.png?size=120x120",
+            "price": "7.01",
+            "stock": 1,
+            "createdAt": "2021-02-22T16:15:52.451Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Omer Bergstrom",
+            "image": "https://robohash.org/Omer Bergstrom.png?size=120x120",
+            "price": "985.81",
+            "stock": 8,
+            "createdAt": "2021-03-03T00:34:25.845Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Madge Bins",
+            "image": "https://robohash.org/Madge Bins.png?size=120x120",
+            "price": "892.22",
+            "stock": 9,
+            "createdAt": "2020-08-08T15:54:47.558Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Winifred Kozey",
+            "image": "https://robohash.org/Winifred Kozey.png?size=120x120",
+            "price": "486.49",
+            "stock": 8,
+            "createdAt": "2020-11-28T23:30:32.306Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Kareem Sanford",
+            "image": "https://robohash.org/Kareem Sanford.png?size=120x120",
+            "price": "14.24",
+            "stock": 0,
+            "createdAt": "2020-09-27T10:15:00.000Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Tremayne Schulist",
+            "image": "https://robohash.org/Tremayne Schulist.png?size=120x120",
+            "price": "485.89",
+            "stock": 0,
+            "createdAt": "2020-07-25T12:51:55.919Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Anthony Pfannerstill",
+            "image": "https://robohash.org/Anthony Pfannerstill.png?size=120x120",
+            "price": "601.65",
+            "stock": 8,
+            "createdAt": "2020-07-13T13:31:00.238Z",
+            "material": "Granite"
+            },
+            {
+            "name": "Margaretta Johns",
+            "image": "https://robohash.org/Margaretta Johns.png?size=120x120",
+            "price": "194.48",
+            "stock": 5,
+            "createdAt": "2020-09-28T09:39:02.061Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Jennings Robel",
+            "image": "https://robohash.org/Jennings Robel.png?size=120x120",
+            "price": "960.17",
+            "stock": 0,
+            "createdAt": "2020-11-28T15:26:43.877Z",
+            "material": "Metal"
+            },
+            {
+            "name": "Erna Beahan",
+            "image": "https://robohash.org/Erna Beahan.png?size=120x120",
+            "price": "942.34",
+            "stock": 0,
+            "createdAt": "2020-10-27T06:51:13.728Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Meda Zulauf",
+            "image": "https://robohash.org/Meda Zulauf.png?size=120x120",
+            "price": "126.32",
+            "stock": 10,
+            "createdAt": "2020-09-14T12:21:51.157Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Scarlett Wiegand",
+            "image": "https://robohash.org/Scarlett Wiegand.png?size=120x120",
+            "price": "88.11",
+            "stock": 6,
+            "createdAt": "2020-10-25T23:03:10.204Z",
+            "material": "Granite"
+            },
+            {
+            "name": "D'angelo Howell",
+            "image": "https://robohash.org/D'angelo Howell.png?size=120x120",
+            "price": "708.09",
+            "stock": 3,
+            "createdAt": "2021-05-12T18:39:44.425Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Andreanne Cole",
+            "image": "https://robohash.org/Andreanne Cole.png?size=120x120",
+            "price": "113.97",
+            "stock": 6,
+            "createdAt": "2020-08-29T08:17:10.917Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Russell Torphy",
+            "image": "https://robohash.org/Russell Torphy.png?size=120x120",
+            "price": "696.12",
+            "stock": 0,
+            "createdAt": "2021-01-12T22:00:27.275Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Karina Hartmann",
+            "image": "https://robohash.org/Karina Hartmann.png?size=120x120",
+            "price": "924.16",
+            "stock": 5,
+            "createdAt": "2021-05-26T16:15:36.168Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Rudy Gerlach",
+            "image": "https://robohash.org/Rudy Gerlach.png?size=120x120",
+            "price": "654.92",
+            "stock": 3,
+            "createdAt": "2021-03-25T10:48:11.586Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Odessa Lehner",
+            "image": "https://robohash.org/Odessa Lehner.png?size=120x120",
+            "price": "721.22",
+            "stock": 0,
+            "createdAt": "2020-06-14T09:43:17.056Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Jedediah Hoeger",
+            "image": "https://robohash.org/Jedediah Hoeger.png?size=120x120",
+            "price": "579.65",
+            "stock": 0,
+            "createdAt": "2021-01-17T03:24:12.305Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Priscilla Wiegand",
+            "image": "https://robohash.org/Priscilla Wiegand.png?size=120x120",
+            "price": "207.37",
+            "stock": 4,
+            "createdAt": "2020-10-23T12:12:59.055Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Edna Konopelski",
+            "image": "https://robohash.org/Edna Konopelski.png?size=120x120",
+            "price": "672.37",
+            "stock": 6,
+            "createdAt": "2021-03-13T06:10:20.001Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Leopold McGlynn",
+            "image": "https://robohash.org/Leopold McGlynn.png?size=120x120",
+            "price": "799.65",
+            "stock": 3,
+            "createdAt": "2020-11-08T02:45:22.788Z",
+            "material": "Frozen"
+            },
+            {
+            "name": "Lamont Rath",
+            "image": "https://robohash.org/Lamont Rath.png?size=120x120",
+            "price": "328.61",
+            "stock": 9,
+            "createdAt": "2021-01-09T04:27:59.207Z",
+            "material": "Cotton"
+            },
+            {
+            "name": "Emily McDermott",
+            "image": "https://robohash.org/Emily McDermott.png?size=120x120",
+            "price": "224.55",
+            "stock": 4,
+            "createdAt": "2021-02-13T22:33:31.056Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Talia Kulas",
+            "image": "https://robohash.org/Talia Kulas.png?size=120x120",
+            "price": "709.44",
+            "stock": 1,
+            "createdAt": "2021-01-11T19:59:10.760Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Juvenal Welch",
+            "image": "https://robohash.org/Juvenal Welch.png?size=120x120",
+            "price": "87.91",
+            "stock": 3,
+            "createdAt": "2021-03-13T23:42:24.655Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Dedric DuBuque",
+            "image": "https://robohash.org/Dedric DuBuque.png?size=120x120",
+            "price": "582.08",
+            "stock": 7,
+            "createdAt": "2021-03-23T20:15:34.410Z",
+            "material": "Cotton"
+            },
+            {
+            "name": "Asha Wintheiser",
+            "image": "https://robohash.org/Asha Wintheiser.png?size=120x120",
+            "price": "468.10",
+            "stock": 3,
+            "createdAt": "2020-10-07T18:50:29.116Z",
+            "material": "Plastic"
+            },
+            {
+            "name": "Delphine Bradtke",
+            "image": "https://robohash.org/Delphine Bradtke.png?size=120x120",
+            "price": "401.58",
+            "stock": 4,
+            "createdAt": "2020-12-23T15:12:30.324Z",
+            "material": "Concrete"
+            },
+            {
+            "name": "Walton Jones",
+            "image": "https://robohash.org/Walton Jones.png?size=120x120",
+            "price": "729.37",
+            "stock": 0,
+            "createdAt": "2020-12-03T00:51:23.451Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Irma Mills",
+            "image": "https://robohash.org/Irma Mills.png?size=120x120",
+            "price": "799.09",
+            "stock": 1,
+            "createdAt": "2021-05-03T21:16:57.134Z",
+            "material": "Rubber"
+            },
+            {
+            "name": "Miller Heidenreich",
+            "image": "https://robohash.org/Miller Heidenreich.png?size=120x120",
+            "price": "496.80",
+            "stock": 9,
+            "createdAt": "2020-12-26T12:28:15.619Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Llewellyn Labadie",
+            "image": "https://robohash.org/Llewellyn Labadie.png?size=120x120",
+            "price": "239.39",
+            "stock": 10,
+            "createdAt": "2021-06-04T11:27:47.096Z",
+            "material": "Fresh"
+            },
+            {
+            "name": "Alexandre Kunde",
+            "image": "https://robohash.org/Alexandre Kunde.png?size=120x120",
+            "price": "207.16",
+            "stock": 5,
+            "createdAt": "2020-08-24T19:24:42.633Z",
+            "material": "Steel"
+            },
+            {
+            "name": "Berneice Howe",
+            "image": "https://robohash.org/Berneice Howe.png?size=120x120",
+            "price": "360.46",
+            "stock": 6,
+            "createdAt": "2021-02-26T17:59:30.669Z",
+            "material": "Wooden"
+            },
+            {
+            "name": "Sylvia Cronin",
+            "image": "https://robohash.org/Sylvia Cronin.png?size=120x120",
+            "price": "556.96",
+            "stock": 4,
+            "createdAt": "2020-07-02T10:31:43.566Z",
+            "material": "Soft"
+            },
+            {
+            "name": "Juvenal Bahringer",
+            "image": "https://robohash.org/Juvenal Bahringer.png?size=120x120",
+            "price": "338.73",
+            "stock": 7,
+            "createdAt": "2021-01-03T22:26:56.493Z",
+            "material": "Concrete"
+            }
+        ],
+        cart: [],
+        total: 0
+    };
+
+    addCart = (name) => {
+
+            const {robots, cart} = this.state;
+
+            const check = cart.every(robots =>{
+            return robots.name !== name;
+        })
+
+        if(check){
+            const data = robots.filter(robot => {
+                return robot.name === name
+            }) 
+            this.setState({cart: [...cart,...data]})
+        }else{
+            alert("Product Added To Cart")
+        }
+    };
+
+    decrease = (name) => {
+        const { cart } = this.state;
+        cart.forEach(robot => {
+            if((robot.name === name)&&(robot.stock > 0)){
+                robot.stock === 1 ? robot.stock = 1 : robot.stock -= 1;
+            }
+        })  
+        this.setState({cart: cart});
+        this.getTotal();
+    };
+
+    increase = (name) => {
+        const { cart } = this.state;
+        cart.forEach(robot => {
+            if((robot.name === name)&&(robot.stock > 0)){
+                robot.stock += 1;
+            }
+        })
+        this.setState({cart: cart});
+        this.getTotal();
+    };
+
+    removeRobot = name => {
+
+        if(window.confirm("Do you want to delete this robot")){
+
+            const {cart} = this.state;
+            cart.forEach((robot, index) => {
+            if(robot.name === name){
+                cart.splice(index, 1)
+            }
+        })
+        this.setState({cart: cart})
+        } 
+    }
+
+    getTotal = () => {
+        const {cart} = this.state;
+        const res = cart.reduce((prev, robot) => {
+            return prev + (robot.price * robot.stock);
+        },0)
+        this.setState({total: res});
+    }
+
+    render() {
+        const {robots, cart, total} = this.state;
+        const {addCart, increase, decrease, removeRobot, getTotal } = this;
+
+        return (
+            <DataContext.Provider value={{robots, addCart, cart, increase, decrease, removeRobot, total, getTotal }}>
+                {this.props.children}
+            </DataContext.Provider>
+        )
+    }
+}
+
