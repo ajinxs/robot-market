@@ -6,8 +6,6 @@ import Section from './components/Section';
 function App() {
   return (
     <div className="App">
-      <h1>Robot Market</h1>
-
       <Router>
         <Header/>
         <Section/>
