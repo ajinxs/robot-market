@@ -16,20 +16,24 @@ export class Robots extends Component {
                 {
                     robots.map(robot =>(
                         <div className="card" key={robot.name}>
+                            
                             <Link to={`/robot/${robot.name}`}>
                                 <img src={robot.image} alt=""/>
                             </Link>
+                            
                             <div className="content">
                                 <h3>{robot.name}</h3>
                                 <span> ฿{robot.price.split(".").join(".")}</span>
+                                
                                 <p>{robot.stock}</p>
                                 <p>{robot.createdAt.slice(0,-14).split('-').reverse().join('-')}</p>
+                                
                                 <p>{robot.material}</p>
                             </div>
+                            
                             <div>
                                 <button onClick={()=> this.context.addCart(robot.name)}>Add To Cart</button>
                             </div>
-
                         </div>
                     ))
                 }

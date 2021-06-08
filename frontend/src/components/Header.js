@@ -12,47 +12,35 @@ export class Header extends Component {
 
     state = {
         toggle: false,
-        //searchTerm : " "
     }
 
+    //burger menu when in mobile mode
     menuToggle = () =>{
         this.setState({toggle: !this.state.toggle})
     };
 
-    // materialLookUp = (e) => {
-    //     this.setState({searchTerm: e.target.searchTerm})
-    // };
-
     render() {
+
         const {toggle} = this.state;
         const {cart} = this.context;
-        //const {searchTerm} = this.state;
 
+        //show alert when 5 robots selected
         if(cart.length === 5){
             alert("5 Robots Selected");
         }
-
-        // if(searchTerm !== ""){
-        //     return null;
-        // }
 
         return (
             <header>
                 <div className="menu" onClick={this.menuToggle}>
                     <img src={Menu} alt="" width="20"/>
                 </div>
+                
                 <div className="logo">
                     <h1><Link to="/">ROBOT MARKET</Link></h1>
                 </div>
-                
-                {/* SEARCH BAR                 
-                <div className="search">
-                    <input type="text" placeholder="Search Material" onChange={this.materialLookUp}/>
-                </div>
-                 */}
-                
+                   
                 <nav>
-                    <ul className={toggle ? "toggle" : ""}>
+                    <ul className={toggle ? "toggle" : ""}> 
                         <li><Link to="/robot">Robots</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
@@ -61,6 +49,7 @@ export class Header extends Component {
                             <img src={Close} alt="" width="20" />   
                         </li>
                     </ul>
+                    
                     <div className="navcart">
                         <span>{cart.length}</span>
                         <Link to="/cart">

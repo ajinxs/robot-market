@@ -812,8 +812,7 @@ export class DataProvider extends Component {
         total: 0
     };
 
-   
-    
+   //add robots to the cart
     addCart = (name) => {
 
             const {robots, cart} = this.state;
@@ -832,6 +831,7 @@ export class DataProvider extends Component {
         }
     };
 
+    //decrease the number of robots in the cart
     decrease = (name) => {
         const { cart } = this.state;
         cart.forEach(robot => {
@@ -843,6 +843,7 @@ export class DataProvider extends Component {
         this.getTotal();
     };
 
+    //increase the number of the robots in the cart
     increase = (name) => {
         const { cart } = this.state;
         cart.forEach(robot => {
@@ -854,6 +855,7 @@ export class DataProvider extends Component {
         this.getTotal();
     };
 
+    //remove robot from the cart
     removeRobot = name => {
 
         if(window.confirm("Do you want to delete this robot")){
@@ -868,6 +870,7 @@ export class DataProvider extends Component {
         } 
     }
 
+    //show total payment in the cart 
     getTotal = () => {
         const {cart} = this.state;
         const res = cart.reduce((prev, robot) => {

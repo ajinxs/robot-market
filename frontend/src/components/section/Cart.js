@@ -24,11 +24,14 @@ export class Cart extends Component {
                     {
                         cart.map(robot => (
                             <div className="details" key={robot.name}>
+                                
                                 <img src={robot.image} alt=""/>
+                                
                                 <div className="box">
                                     <div className="row">
                                         <h2>{robot.name}</h2>
                                     </div>
+                                    
                                     <span>฿{robot.price}</span>
                                     <p>{robot.material}</p>
                                     
@@ -38,6 +41,7 @@ export class Cart extends Component {
                                         <button className="count" onClick={() => increase(robot.name)}> + </button>
                                     </div>
                                 </div>
+                                
                                 <div className="delete" onClick={() => removeRobot(robot.name)}>X</div>
                             </div>
                         ))

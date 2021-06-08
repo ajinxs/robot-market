@@ -12,10 +12,8 @@ function App() {
           <Header/>
           <Section/>
         </Router>
-        {/*Add your code here*/}
       </div>  
     </DataProvider>
-    
   );
 }
 
